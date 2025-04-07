@@ -1,0 +1,229 @@
+/* General Reset */
+  .landing-container-L {
+    width: 100%;
+    min-height: 100vh;
+    position: relative;
+  }
+  
+  /* Navbar */
+  .navbar-L {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 5%;
+    background-color: white;
+    z-index: 100;
+    position: relative;
+    /* width: 100%; */
+  }
+  
+  .nav-links-L {
+    display: flex;
+    list-style: none;
+    gap: 25px;
+    margin-left: auto;
+  }
+  
+  .nav-links-L li {
+    cursor: pointer;
+    padding: 8px 12px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .nav-links-L li:hover {
+    background-color: #e2e8f0; /* soft grey-white mix */
+    color: #333;
+  }
+  
+  
+  .register-btn-L {
+    margin-left: 20px;
+    background-color: #28a745;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .register-btn-L:hover {
+    background-color: #218838;
+  }
+  
+  .logo-L {
+    font-size: 24px;
+  }
+  
+  .arrow-icon-L {
+    font-size: 14px;
+  }
+  
+  /* Carousel Container and Track */
+  .carousel-container-L {
+    position: relative;
+    width: 100%;
+    height: calc(100vh - 100px); /* Adjust based on navbar height */
+    overflow: hidden;
+  }
+  
+  .carousel-track-L {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.5s ease-in-out;
+  }
+  
+  .carousel-slide-L {
+    min-width: 100%; /* Each slide takes full width */
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 5%;
+    background-color: #F5F7FA;
+  }
+  
+  /* Carousel Content */
+  .hero-content-L {
+    max-width: 50%;
+    animation: fadeIn 0.5s ease-in-out;
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  .hero-content-L h1 {
+    font-size: 50px;
+    font-weight: 700;
+    color: #333;
+  }
+  
+  .hero-content-L .highlight-L {
+    color: #28a745;
+  }
+  
+  .hero-content-L p {
+    font-size: 18px;
+    color: #666;
+    margin-top: 10px;
+  }
+  
+  .watch-demo-L {
+    margin-top: 20px;
+    background: #28a745;
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .watch-demo-L:hover {
+    background: #218838;
+  }
+  
+  /* Hero Image */
+  .hero-image-L {
+    width: 45%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: slideIn 0.5s ease-in-out;
+  }
+  
+  @keyframes slideIn {
+    from { opacity: 0; transform: translateX(50px); }
+    to { opacity: 1; transform: translateX(0); }
+  }
+  
+  .hero-image-L img {
+    width: 100%;
+    max-width: 500px;
+    object-fit: contain;
+  }
+  
+  /* Carousel Controls */
+  .carousel-control-L {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.7);
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 10;
+    transition: all 0.3s ease;
+  }
+  
+  .carousel-control-L:hover {
+    background: rgba(255, 255, 255, 0.9);
+  }
+  
+  .prev-btn-L {
+    left: 20px;
+  }
+  
+  .next-btn-L {
+    right: 20px;
+  }
+  
+  /* Dots Navigation */
+  .dots-navigation-L {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
+  }
+  
+  .dot-L {
+    width: 8px;
+    height: 8px;
+    background-color: #d1d1d1;
+    border-radius: 50%;
+    margin: 0 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  .dot-L.active-L {
+    background-color: #28a745;
+    transform: scale(1.2);
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 992px) {
+    .carousel-slide-L {
+      flex-direction: column;
+    }
+    
+    .hero-content-L, .hero-image-L {
+      max-width: 90%;
+      width: 90%;
+      text-align: center;
+      margin: 20px 0;
+    }
+    
+    .hero-content-L h1 {
+      font-size: 36px;
+    }
+  }
+  .logo-img-L {
+    width: 35px;
+    height: 24px;
+    object-fit: contain;
+  }
