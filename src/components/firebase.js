@@ -11,7 +11,7 @@ const firebaseConfig = {
     appId: "1:533672139151:web:8f0b2fa1ccd9ef4355d3fa",
     measurementId: "G-29YHLJPZ5Q"
 };
-const googleProvider = new GoogleAuthProvider();
+export const googleProvider = new GoogleAuthProvider();
 googleProvider.setCustomParameters({
   prompt: "select_account"
 });

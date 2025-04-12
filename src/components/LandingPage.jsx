@@ -18,8 +18,8 @@ const slides = [
     image: l1image,
   },
   {
-    title: "Optimize Workflows",
-    highlight: "With AI Automation",
+    title: "Complete your tasks",
+    highlight: "faster",
     description: "Leverage AI-driven tools to streamline your workflow and improve productivity.",
     image: l2image,
   },

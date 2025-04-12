@@ -2,13 +2,15 @@ import React, { useState } from 'react';
 import './dashboard.css';
 import { useParams } from 'react-router-dom';
 import { signOut } from "firebase/auth";
-import { auth } from './firebase'; // adjust path as needed
+import { auth } from './firebase'; 
 import { useNavigate } from 'react-router-dom';
+
 const Dashboard = () => {
   const [activeFeature, setActiveFeature] = useState(null);
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const { username } = useParams();
   const navigate = useNavigate();
+  
   const handleLogout = async () => {
     try {
       await signOut(auth);
@@ -17,6 +19,7 @@ const Dashboard = () => {
       console.error("Logout failed", error);
     }
   };
+  
   const toggleSidebar = () => {
     setSidebarOpen(!sidebarOpen);
   };
@@ -25,7 +28,13 @@ const Dashboard = () => {
     setActiveFeature(index);
   };
   
-  // Features organized into categories
+  // Function to handle navigation when a feature button is clicked
+  const handleFeatureClick = (path) => {
+    if (path) {
+      navigate(path);
+    }
+  };
+  
   const categories = [
     {
       name: "Resume",
@@ -35,25 +44,36 @@ const Dashboard = () => {
           icon: "chart-bar",
           title: "ATS Scoring",
           description: "Analyzes resume compatibility with ATS",
-          buttonText: "Use"
+          buttonText: "Use",
+          function: `/ats-scoring`
         },
         {
           icon: "file-text",
           title: "Resume Optimization",
           description: "Enhances resumes based on job descriptions",
-          buttonText: "Use"
+          buttonText: "Use",
+          function: `/auth/dashboard/${username}/resumeOptimization`
         },
         {
           icon: "plus",
           title: "New Resume Generator",
           description: "Creates a fresh resume from scratch",
-          buttonText: "Use"
+          buttonText: "Use",
+          function: `/auth/dashboard/${username}/ResumeGenerator`
         },
         {
           icon: "file-plus",
           title: "Cover Letter Optimization",
           description: "Enhances cover letters for job applications",
-          buttonText: "Use"
+          buttonText: "Use",
+          function: `/auth/dashboard/${username}/CoverLetterGenerator`
+        },
+        {
+          icon: "file-plus",
+          title: "Chrome extension for cover letter creation",
+          description: "Generate the cover letters by our chrome extension",
+          buttonText: "Download",
+          function: `/auth/dashboard/${username}/CoverLetterGenerator`
         }
       ]
     },
@@ -65,19 +85,22 @@ const Dashboard = () => {
           icon: "map-pin",
           title: "Job Recommendations",
           description: "Finds best-matching jobs from LinkedIn",
-          buttonText: "Use"
+          buttonText: "Use",
+          function: `/auth/dashboard/${username}/LinkedInJobSuggestions`
         },
         {
           icon: "trending-up",
           title: "Skill Gap Analysis",
           description: "Identifies missing skills for a target job",
-          buttonText: "Use"
+          buttonText: "Use",
+          function: `/skill-gap`
         },
         {
           icon: "zap",
           title: "One-Click Apply",
           description: "Applies to multiple jobs with a single click",
-          buttonText: "Use"
+          buttonText: "Use",
+          function: `/auth/dashboard/${username}/OneClickApply`
         }
       ]
     },
@@ -89,13 +112,15 @@ const Dashboard = () => {
           icon: "mic",
           title: "AI Interview Practicer",
           description: "Conducts mock AI interviews",
-          buttonText: "Use"
+          buttonText: "Use",
+          function: `/auth/dashboard/${username}/AiInterviewPractice`
         },
         {
           icon: "help-circle",
           title: "Interview Questions",
           description: "Generates personalized interview questions",
-          buttonText: "Use"
+          buttonText: "Use",
+          function: `/auth/dashboard/${username}/AiInterviewQuestions`
         }
       ]
     },
@@ -108,20 +133,29 @@ const Dashboard = () => {
           title: "LinkedIn Optimization",
           description: "Improves LinkedIn profiles for recruiters",
           buttonText: "Use",
-          function:`/auth/dashboard/:${username}/linkedin`
+          function: `/auth/dashboard/${username}/LinkedInOptimization`
         },
         {
           icon: "message-circle",
           title: "Personalized Chatbot",
           description: "AI assistant for personalized career advice",
-          buttonText: "Use"
+          buttonText: "Use",
+          function: `/auth/dashboard/${username}/personalchatbot`
         },
         {
           icon: "heart",
           title: "Emotional Support Chatbot",
           description: "AI chatbot for employee well-being",
-          buttonText: "Use"
-        }
+          buttonText: "Use",
+          function: `/auth/dashboard/${username}/EmotionalSupportChatbot`
+        },
+        {
+          icon: "help-circle",
+          title: "Get your email analysis",
+          description: "Read your emails and get analysis in seconds",
+          buttonText: "Use",
+          function: `/auth/dashboard/${username}/EmotionalSupportChatbot`
+        },
       ]
     }
   ];
@@ -266,10 +300,6 @@ const Dashboard = () => {
             <span>Your Dashboard</span>
           </div>
         </div>
-        {/* <div className="user-profile">
-          <span className="user-name">John Doe</span>
-          <img src="/api/placeholder/40/40" alt="User Profile" />
-        </div> */}
       </div>
 
       {/* Sidebar */}
@@ -289,14 +319,14 @@ const Dashboard = () => {
         </div>
         
         <div className="sidebar-user-profile">
-      <div className="employee-icon">
-          <img src={`https://ui-avatars.com/api/?name=${username}&length=1`}></img>
-        </div> {/* Unicode briefcase icon */}
-      <div className="user-info">
-        <h3>{username}</h3>
-        <p>Software Developer</p>
-      </div>
-    </div>
+          <div className="employee-icon">
+            <img src={`https://ui-avatars.com/api/?name=${username}&length=1`} alt={username} />
+          </div>
+          <div className="user-info">
+            <h3>{username}</h3>
+            <p>Software Developer</p>
+          </div>
+        </div>
         <nav>
           <ul>
             <li className="active">
@@ -398,7 +428,10 @@ const Dashboard = () => {
                         <h3>{feature.title}</h3>
                         <p>{feature.description}</p>
                       </div>
-                      <button className="action-button" onClick={navigate(feature.function)}>
+                      <button 
+                        className="action-button" 
+                        onClick={() => handleFeatureClick(feature.function)}
+                      >
                         {feature.buttonText}
                       </button>
                     </div>
