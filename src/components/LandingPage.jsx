@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
-import "./Landingpage.css";
+import "./LandingPage.css";
 import { FaArrowRight, FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import l1image from "../assets/l1image.jpg";
 import l2image from "../assets/l2image.png";
