@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./features.css";
+import "./Features.css";
 import {
   FaRobot, FaFileAlt, FaSearch, FaChartBar,
   FaLinkedin, FaMicrophone, FaQuestionCircle,
