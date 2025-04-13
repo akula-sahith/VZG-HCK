@@ -16,7 +16,9 @@ import InterviewPracticeApp from './components/InterviewPracticeApp';
 import EmotionalSupportChatbot from './components/EmotionalSupportChatbot';
 import LinkedInJobSuggestions from './components/LinkedInJobSuggestions';
 import PersonalizedChatbot from './components/PersonalizedChatbot';
-
+import EmotionalThreedChatbot from './components/EmotionalThreedChatbot';
+import { ChatProvider } from './hooks/useChat';
+import ATSAnalyzer from './components/ATS';
 function App() {
   return (
     <AuthProvider>
@@ -94,7 +96,9 @@ function App() {
             path="/auth/dashboard/:username/EmotionalSupportChatbot"
             element={
               <ProtectedRoute>
-                 <EmotionalSupportChatbot/>
+                <ChatProvider>
+      <EmotionalSupportChatbot/>
+    </ChatProvider>
               </ProtectedRoute>
             }
           />
@@ -111,6 +115,14 @@ function App() {
             element={
               <ProtectedRoute>
                  <PersonalizedChatbot/>
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/auth/dashboard/:username/ats"
+            element={
+              <ProtectedRoute>
+                 <ATSAnalyzer/>
               </ProtectedRoute>
             }
           />

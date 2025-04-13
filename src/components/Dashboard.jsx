@@ -45,7 +45,7 @@ const Dashboard = () => {
           title: "ATS Scoring",
           description: "Analyzes resume compatibility with ATS",
           buttonText: "Use",
-          function: `/ats-scoring`
+          function: `/auth/dashboard/${username}/ats`
         },
         {
           icon: "file-text",

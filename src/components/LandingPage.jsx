@@ -104,8 +104,7 @@ const LandingPage = () => {
     <>
     <div className="landing-container-L" ref={homeRef}>
       <nav className="navbar-L">
-        <img src={logo} alt="Logo" className="logo-img-L" />
-
+           <h3>QuickCareer</h3>
         <ul className="nav-links-L">
           <li onClick={() => scrollToSection(homeRef)}>Home</li>
           <li onClick={() => scrollToSection(featuresRef)}>Features</li>

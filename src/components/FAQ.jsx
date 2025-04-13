@@ -11,57 +11,57 @@ import {
 const FAQComponent = () => {
   const faqs = [
     {
-      question: "What is an AI-powered employee assistant?",
+      question: " How does the resume analysis and ATS scoring work?",
       answer:
-        "Our AI assistant is a smart tool that helps automate routine tasks, streamline workflows, and boost overall productivity in your workplace.",
+        " When a user uploads a resume, it's parsed using libraries like pdf2docx, docx, or NLP tools. We extract key sections (skills, education, experience) and run them through a scoring algorithm that compares them with industry-standard ATS filters using TF-IDF and keyword matching.",
       icon: <Zap size={20} />,
     },
     {
-      question: "How can this assistant improve my daily workflow?",
+      question: " What technologies power the job matching and recommendation system?",
       answer:
-        "It manages repetitive tasks, sets reminders, helps with documentation, and offers real-time support, freeing you to focus on higher-priority work.",
+        " We use NLP models like BERT and Sentence Transformers to extract embeddings from both resumes and job descriptions, then compute cosine similarity scores to rank job matches based on relevance.",
       icon: <Clock size={20} />,
     },
     {
-      question: "Is my data safe and secure?",
+      question: "How is user data stored and kept secure?",
       answer:
-        "Absolutely. We prioritize data privacy with top-tier encryption protocols and secure cloud infrastructure.",
+        "All user authentication is handled via Firebase Auth. Sensitive data (like resumes or LinkedIn credentials for automation) is stored in MongoDB with strict access controls, and passwords are never stored—only used in encrypted memory during automation.",
       icon: <Shield size={20} />,
     },
     {
-      question: "Can I integrate this assistant with existing tools?",
+      question: "How is the AI Interview Assistant implemented?",
       answer:
-        "Yes! Our assistant is designed to integrate with popular workplace apps like Slack, Google Workspace, Microsoft Teams, and more.",
+        "It uses OpenAI's GPT-3.5 or T5 to analyze job descriptions and generate personalized behavioral and technical interview questions. We plan to use Text-to-Speech (TTS) and Speech-to-Text (STT) to simulate a full interview experience.",
       icon: <Settings size={20} />,
     },
     {
-      question: "Do I need technical knowledge to use it?",
+      question: "What backend architecture are you using?",
       answer:
-        "Not at all. The platform is user-friendly and intuitive, designed for everyone—no coding or tech background needed.",
+        "The backend is built with Express.js and Flask. Express handles routing, user management, and basic API tasks, while Flask serves ML/NLP models like resume parsing, scoring, and job match computation.",
       icon: <CheckCircle size={20} />,
     },
     {
-      question: "Is this solution suitable for small teams or freelancers?",
+      question: " Can the user download or share their optimized resume?",
       answer:
-        "Definitely. Whether you're a team of 2 or 200, the assistant adapts to your workflow and scales with your needs.",
+        " Yes! After analysis and optimization, the resume is displayed in a well-structured design via a ResumeDownload.jsx component and can be downloaded as a PDF using react-to-print.",
       icon: <CheckCircle size={20} />,
     },
     {
-      question: "What kind of tasks can the assistant handle?",
+      question: "How does the LinkedIn Easy Apply feature work technically?",
       answer:
-        "It can schedule meetings, manage emails, track tasks, generate reports, and much more.",
+        "We use Playwright with LangChain + Browser Toolkit to control a headless browser. It logs into LinkedIn, navigates to the job link, uploads the resume, and submits the application using an AI Agent with step-by-step task execution.",
       icon: <Zap size={20} />,
     },
     {
-      question: "Is there a free trial available?",
+      question: "What frontend frameworks and libraries are used?",
       answer:
-        "Yes, we offer a free trial so you can experience the benefits before making any commitment.",
+        " The frontend is built in React.js with Tailwind CSS for styling, Firebase for auth, react-to-print for download, and Chart.js/Recharts for dashboard visualizations.",
       icon: <Clock size={20} />,
     },
     {
-      question: "Can I customize the assistant's behavior?",
+      question: "How are resume improvement suggestions generated?",
       answer:
-        "Yes, the assistant is fully customizable to match your workflow and preferences.",
+        "We use rule-based NLP and fine-tuned GPT prompts to analyze grammar, format, and keyword density. It checks for action verbs, passive voice, and missing keywords, then gives specific, editable suggestions.",
       icon: <Settings size={20} />,
     },
     {
