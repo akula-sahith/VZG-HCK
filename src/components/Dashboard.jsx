@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './dashboard.css';
+import './Dashboard.css';
 import { useParams } from 'react-router-dom';
 import { signOut } from "firebase/auth";
 import { auth } from './firebase'; 
