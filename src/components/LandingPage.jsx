@@ -7,7 +7,7 @@ import l3image from "../assets/l3image.png";
 import logo from "../assets/icon.jpg";
 import Features from "../components/Features";
 import FAQ from "../components/FAQ";
-import Stats from "../components/stats";
+import Stats from "../components/Stats";
 import Footer from "../components/Footer";
 import { useNavigate } from "react-router-dom";
 const slides = [
