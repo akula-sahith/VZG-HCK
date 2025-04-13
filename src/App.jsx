@@ -3,7 +3,7 @@ import './App.css';
 import LandingPage from './components/LandingPage';
 import LoginSignUp from './components/LoginSignUp';
 import RegistrationForm from './components/RegistrationForm';
-import Dashboard from './components/dashboard'; 
+import Dashboard from './components/Dashboard'; 
 import LinkedInOptimization from './components/LinkedInOptimization';
 import { AuthProvider } from './components/AuthContext';
 import ProtectedRoute from './components/ProtectedRoute';
