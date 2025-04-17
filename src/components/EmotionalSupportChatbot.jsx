@@ -32,7 +32,7 @@ export default function MotivationalSupportChatbot() {
     
     try {
       // API endpoint URL - replace with your actual backend URL
-      const apiUrl = `http://localhost:5000/api/${username}/mchatbot`;
+      const apiUrl = `https://vzg-bck-1.onrender.com/api/${username}/mchatbot`;
       
       const response = await fetch(apiUrl, {
         method: 'POST',

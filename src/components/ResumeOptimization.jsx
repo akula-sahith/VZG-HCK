@@ -36,7 +36,7 @@ const ResumeOptimization = () => {
     const fetchUserData = async () => {
       try {
         const res = await axios.get(
-          `http://localhost:5000/api/user/getdetails/${username}`
+          `https://vzg-bck-1.onrender.com/api/user/getdetails/${username}`
         );
         console.log("User Info:", res.data);
 
@@ -45,7 +45,7 @@ const ResumeOptimization = () => {
           name: res.data.userName,
           resume: {
             fileName: res.data.resumePath.split("/").pop(), // Just filename
-            fullPath: `http://localhost:5000/${res.data.resumePath}`, // Full viewable path
+            fullPath: `https://vzg-bck-1.onrender.com/${res.data.resumePath}`, // Full viewable path
           },
         });
       } catch (error) {
@@ -100,7 +100,7 @@ const ResumeOptimization = () => {
 
     try {
       const res = await axios.post(
-        `http://localhost:5000/api/${username}/optimize`,
+        `https://vzg-bck-1.onrender.com/api/${username}/optimize`,
         {
           jobDescription: jobDescription,
         }

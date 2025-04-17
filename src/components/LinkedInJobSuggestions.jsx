@@ -5,7 +5,7 @@ import { useParams } from 'react-router-dom';
 // API call to fetch job suggestions based on the username
 const fetchJobSuggestions = async (username) => {
   try {
-    const response = await axios.get(`http://localhost:5000/api/jobSuggestions/${username}`);
+    const response = await axios.get(`https://vzg-bck-1.onrender.com/api/jobSuggestions/${username}`);
     return response.data.jobs;
   } catch (error) {
     console.error("Error fetching job suggestions:", error);

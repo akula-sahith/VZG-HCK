@@ -55,13 +55,13 @@ const LinkedInSuggestions = () => {
     try {
       // 1. Fetch current scraped LinkedIn profile data
       const profileRes = await fetch(
-        `http://localhost:5000/api/linkedin/${username}`
+        `https://vzg-bck-1.onrender.com/api/linkedin/${username}`
       );
       const profileData = await profileRes.json();
 
       // 2. Fetch optimized suggestions for headline, summary, and skills
       const suggestionsRes = await fetch(
-        `http://localhost:5000/api/linkedin-optimize/${username}`
+        `https://vzg-bck-1.onrender.com/api/linkedin-optimize/${username}`
       );
       const suggestionsData = await suggestionsRes.json();
 

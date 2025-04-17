@@ -34,7 +34,7 @@ const RegistrationForm = () => {
     });
   
     try {
-      const res = await axios.post("http://localhost:5000/api/register", payload, {
+      const res = await axios.post("https://vzg-bck-1.onrender.com/api/register", payload, {
         headers: {
           "Content-Type": "multipart/form-data",
         },

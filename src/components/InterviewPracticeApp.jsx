@@ -433,7 +433,7 @@ export default function InterviewPracticeApp() {
     
     try {
       // API call to generate questions
-      const response = await fetch(`http://localhost:5000/api/${username}/generate`, {
+      const response = await fetch(`https://vzg-bck-1.onrender.com/api/${username}/generate`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

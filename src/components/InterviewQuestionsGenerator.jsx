@@ -101,7 +101,7 @@ const InterviewQuestionsGenerator = () => {
 
     setIsGenerating(true);
     try {
-      const res = await axios.post(`http://localhost:5000/api/${username}/generate`, {
+      const res = await axios.post(`https://vzg-bck-1.onrender.com/api/${username}/generate`, {
         role: jobRole,
         company: companyName,
         jobDescription,
