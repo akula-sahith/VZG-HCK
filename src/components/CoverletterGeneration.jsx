@@ -44,7 +44,7 @@ const CoverLetterGenerator = () => {
       };
 
       const response = await axios.post(
-        `https://vzg-bck-1.onrender.com/api/${username}/generate-cover-letter`,
+        `http://localhost:5000/api/${username}/generate-cover-letter`,
         payload,
         {
           headers: {
